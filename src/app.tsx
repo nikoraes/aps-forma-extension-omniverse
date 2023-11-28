@@ -1,10 +1,6 @@
-/* import { useState } from "preact/hooks";
-import DateSelector from "./components/DateSelector";
+import { useState } from "preact/hooks";
 import ExportButton from "./components/ExportButton";
-import IntervalSelector from "./components/IntervalSelector";
-import ResolutionSelector from "./components/ResolutionSelector";
-import TimeSelector from "./components/TimeSelector";
-import PreviewButton from "./components/PreviewButton"; */
+import LiveSyncToggle from "./components/LiveSyncToggle";
 
 export default function App () {
   /* const [month, setMonth] = useState(6);
@@ -16,9 +12,17 @@ export default function App () {
   const [endMinute, setEndMinute] = useState(0);
   const [resolution, setResolution] = useState("2048x1536"); */
 
+  const [numberOfTriangles, setNumberOfTriangles] = useState(0)
+
   return (
     <>
       <h1>Omniverse</h1>
+      <ExportButton
+        setNumberOfTriangles={setNumberOfTriangles}
+      />
+      <div style="height: 10px;"></div>
+      <LiveSyncToggle></LiveSyncToggle>
+      <div>{numberOfTriangles}</div>
       {/* <DateSelector month={month} setMonth={setMonth} day={day} setDay={setDay} />
       <TimeSelector
         startHour={startHour}

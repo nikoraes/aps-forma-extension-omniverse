@@ -1,5 +1,6 @@
 body {
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -21,6 +22,10 @@ weave-select {
   width: 100%;
   font-weight: 600;
   font-size: 11px;
+}
+
+weave-toggle {
+  margin-right: 4px;
 }
 
 .row {

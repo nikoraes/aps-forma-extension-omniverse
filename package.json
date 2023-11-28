@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "DEV_SERVER=1 vite",
+    "start": "set DEV_SERVER=1 vite",
     "build": "vite build",
     "typecheck": "tsc --noEmit",
     "prettier:check": "yarn prettier --check src",

@@ -18,6 +18,10 @@ export declare module "preact/src/jsx" {
         value: any;
         children?: JSX.Element | string;
       };
+      "weave-toggle": JSX.HTMLAttributes<HTMLElement> & {
+        disabled?: true;
+        toggled?: true;
+      };
     }
   }
 }
