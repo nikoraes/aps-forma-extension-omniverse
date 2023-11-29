@@ -22,6 +22,9 @@ export declare module "preact/src/jsx" {
         disabled?: true;
         toggled?: true;
       };
+      "py-script": JSX.HTMLAttributes<HTMLElement> & {
+        children: any;
+      };
     }
   }
 }
