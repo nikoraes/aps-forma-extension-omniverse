@@ -3,9 +3,12 @@
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "node",
     "allowImportingTsExtensions": true,
@@ -15,12 +18,14 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
-
-    /* Linting */ 
+    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "wasm/emHdBindings.jwasm/emHdBindings.worker.jser.jwasm/jsBindings.jsgs.js"
+  ]
 }
