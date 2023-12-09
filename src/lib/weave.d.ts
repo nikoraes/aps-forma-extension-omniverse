@@ -18,12 +18,17 @@ export declare module "preact/src/jsx" {
         value: any;
         children?: JSX.Element | string;
       };
+      "weave-icon-button": JSX.HTMLAttributes<HTMLElement> & {
+        disabled?: true;
+      };
       "weave-toggle": JSX.HTMLAttributes<HTMLElement> & {
         disabled?: true;
         toggled?: true;
       };
-      "py-script": JSX.HTMLAttributes<HTMLElement> & {
-        children: any;
+      "weave-editable": JSX.HTMLAttributes<HTMLElement> & {
+        edit?: true;
+        doubleclick?: true;
+        onChange: (e: CustomEvent<{ value: string; text: string }>) => void;
       };
     }
   }

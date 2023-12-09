@@ -2,10 +2,11 @@ import { Forma } from "forma-embedded-view-sdk/auto";
 
 
 type ExportButtonProps = {
+  connection: string
   setNumberOfTriangles: (val: number) => void;
 };
 
-export default function ExportButton (props: ExportButtonProps) {
+export default function ImportMeshButton (props: ExportButtonProps) {
   const omniFormaLinkEndpoint = '/kit/formaconnector/link'
   const { setNumberOfTriangles } = props;
   const onClickExport = async () => {
@@ -47,7 +48,7 @@ export default function ExportButton (props: ExportButtonProps) {
 
       for (const mesh of meshes) {
 
-        console.log(mesh[1])
+        console.log(mesh[0])
 
         // Create a new Blob from the Float32Array
         const blob = new Blob([mesh[1]], { type: 'application/octet-stream' });
@@ -57,7 +58,6 @@ export default function ExportButton (props: ExportButtonProps) {
 
         // Append the Blob to the FormData
         formData.append('file', blob, 'filename.bin');
-
 
         const response = await fetch(`/kit/formaconnector/importmesh/${mesh[0].split('/')[mesh[0].split('/').length - 1]}`, {
           method: 'POST',
@@ -81,7 +81,7 @@ export default function ExportButton (props: ExportButtonProps) {
   return (
     <div class="row">
       <weave-button variant={"solid"} onClick={onClickExport}>
-        Export to USD
+        Import in Omniverse
       </weave-button>
     </div>
   );

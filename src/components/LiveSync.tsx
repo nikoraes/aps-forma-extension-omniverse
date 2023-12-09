@@ -1,6 +1,6 @@
 import { Forma } from "forma-embedded-view-sdk/auto";
 
-export default function LiveSyncToggle () {
+export default function LiveSync () {
   return (
     <>
       <div class="row">
@@ -8,9 +8,11 @@ export default function LiveSyncToggle () {
         <weave-toggle>
         </weave-toggle>
       </div>
-      <div class="row">
-        <div>http://localhost:8211</div>
-      </div>
+      {/* <div class="row">
+        <div class="row-title">Save Stage</div>
+        <weave-toggle>
+        </weave-toggle>
+      </div> */}
     </>
   );
 }

@@ -28,13 +28,24 @@ weave-toggle {
   margin-right: 4px;
 }
 
+weave-editable {
+  width: 100%;
+}
+
 .row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 
   height: 36px;
+}
+
+.title-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .row-title {
@@ -46,10 +57,10 @@ weave-toggle {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: baseline;
+  align-items: center;
 
-  width: 70%;
-  max-width: 70%;
+  width: 76%;
+  max-width: 76%;
 }
 
 .helpText {

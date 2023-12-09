@@ -1,6 +1,8 @@
 import { useState } from "preact/hooks";
-import ExportButton from "./components/ExportButton";
-import LiveSyncToggle from "./components/LiveSyncToggle";
+import ConnectionInput from "./components/ConnectionInput";
+import UsdFileInput from "./components/UsdFileInput";
+import ImportMeshButton from "./components/ImportMeshButton";
+import LiveSync from "./components/LiveSync";
 
 
 export default function App () {
@@ -13,49 +15,32 @@ export default function App () {
   const [endMinute, setEndMinute] = useState(0);
   const [resolution, setResolution] = useState("2048x1536"); */
 
+  const [connection, setConnection] = useState('http://localhost:8211')
+  const [usdFile, setUsdFile] = useState('omniverse://localhost')
   const [numberOfTriangles, setNumberOfTriangles] = useState(0)
 
   return (
     <>
       <h1>Omniverse</h1>
-      <ExportButton
+      <ConnectionInput
+        connection={connection}
+        setConnection={setConnection}
+      />
+      <div style="height: 10px;"></div>
+      <UsdFileInput
+        connection={connection}
+        usdFile={usdFile}
+        setUsdFile={setUsdFile}
+      />
+      <div style="height: 10px;"></div>
+      <LiveSync></LiveSync>
+      <div style="height: 10px;"></div>
+      <ImportMeshButton
+        connection={connection}
         setNumberOfTriangles={setNumberOfTriangles}
       />
       <div style="height: 10px;"></div>
-      <LiveSyncToggle></LiveSyncToggle>
       <div>{numberOfTriangles}</div>
-      {/* <DateSelector month={month} setMonth={setMonth} day={day} setDay={setDay} />
-      <TimeSelector
-        startHour={startHour}
-        setStartHour={setStartHour}
-        startMinute={startMinute}
-        setStartMinute={setStartMinute}
-        endHour={endHour}
-        setEndHour={setEndHour}
-        endMinute={endMinute}
-        setEndMinute={setEndMinute}
-      />
-      <IntervalSelector interval={interval} setInterval={setInterval} />
-      <ResolutionSelector resolution={resolution} setResolution={setResolution} />
-      <PreviewButton
-        month={month}
-        day={day}
-        startHour={startHour}
-        startMinute={startMinute}
-        endHour={endHour}
-        endMinute={endMinute}
-        interval={interval}
-      />
-      <ExportButton
-        month={month}
-        day={day}
-        startHour={startHour}
-        startMinute={startMinute}
-        endHour={endHour}
-        endMinute={endMinute}
-        resolution={resolution}
-        interval={interval}
-      /> */}
     </>
   );
 }
