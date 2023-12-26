@@ -1,23 +1,14 @@
 import { useState } from "preact/hooks";
 import ConnectionInput from "./components/ConnectionInput";
-import UsdFileInput from "./components/UsdFileInput";
-import ImportMeshButton from "./components/ImportMeshButton";
-import LiveSync from "./components/LiveSync";
+import UsdFileInput from "./components/UsdPathInput";
+import SendMeshButton from "./components/SendMeshButton";
+import LiveSyncToggle from "./components/LiveSyncToggle";
 
 
 export default function App () {
-  /* const [month, setMonth] = useState(6);
-  const [day, setDay] = useState(15);
-  const [interval, setInterval] = useState(60);
-  const [startHour, setStartHour] = useState(8);
-  const [startMinute, setStartMinute] = useState(0);
-  const [endHour, setEndHour] = useState(20);
-  const [endMinute, setEndMinute] = useState(0);
-  const [resolution, setResolution] = useState("2048x1536"); */
-
   const [connection, setConnection] = useState('http://localhost:8211')
-  const [usdFile, setUsdFile] = useState('omniverse://localhost')
-  const [numberOfTriangles, setNumberOfTriangles] = useState(0)
+  const [usdPath, setUsdPath] = useState('omniverse://localhost')
+  const [liveSync, setLiveSync] = useState(false)
 
   return (
     <>
@@ -29,18 +20,17 @@ export default function App () {
       <div style="height: 10px;"></div>
       <UsdFileInput
         connection={connection}
-        usdFile={usdFile}
-        setUsdFile={setUsdFile}
+        usdPath={usdPath}
+        setUsdPath={setUsdPath}
       />
       <div style="height: 10px;"></div>
-      <LiveSync></LiveSync>
+      <LiveSyncToggle liveSync={liveSync} setLiveSync={setLiveSync}></LiveSyncToggle>
       <div style="height: 10px;"></div>
-      <ImportMeshButton
+      <SendMeshButton
         connection={connection}
-        setNumberOfTriangles={setNumberOfTriangles}
-      />
+        usdPath={usdPath}
+      ></SendMeshButton>
       <div style="height: 10px;"></div>
-      <div>{numberOfTriangles}</div>
     </>
   );
 }

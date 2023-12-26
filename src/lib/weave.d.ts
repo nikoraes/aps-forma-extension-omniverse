@@ -23,7 +23,8 @@ export declare module "preact/src/jsx" {
       };
       "weave-toggle": JSX.HTMLAttributes<HTMLElement> & {
         disabled?: true;
-        toggled?: true;
+        toggled?: boolean;
+        onChange: (e: CustomEvent<{ value: string; checked: boolean }>) => void;
       };
       "weave-editable": JSX.HTMLAttributes<HTMLElement> & {
         edit?: true;
